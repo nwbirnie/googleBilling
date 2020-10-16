@@ -83,7 +83,7 @@ public class GetCampaigns {
             // Creates and issues a search Google Ads stream request that will retrieve all campaigns.
             ServerStream<SearchGoogleAdsStreamResponse> stream =
                     googleAdsServiceClient.searchStreamCallable().call(request);
-
+System.out.println("callable returned");
             // Iterates through and prints all of the results in the stream response.
             for (SearchGoogleAdsStreamResponse response : stream) {
                 for (GoogleAdsRow googleAdsRow : response.getResultsList()) {
@@ -93,5 +93,6 @@ public class GetCampaigns {
                 }
             }
         }
+System.out.println("result complete");
     }
 }
